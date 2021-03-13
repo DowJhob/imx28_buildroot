@@ -11,7 +11,13 @@ PORT="$1"
 MODE="$2"
 
 case $PORT in
-	"/dev/ttyAPP1")
+	"/dev/ttyAPP0")
+		echo "Port0"
+		PORT_232_OFF=86
+		PORT_485_NRE=88
+		PORT_422_NDE=89
+		;;
+        "/dev/ttyAPP1")
 		echo "Port1"
 		PORT_232_OFF=76
 		PORT_485_NRE=78
@@ -22,6 +28,12 @@ case $PORT in
 		PORT_232_OFF=66
 		PORT_485_NRE=68
 		PORT_422_NDE=69
+		;;
+        "/dev/ttyAPP3")
+		echo "Port3"
+		PORT_232_OFF=56
+		PORT_485_NRE=58
+		PORT_422_NDE=59
 		;;
 	*)
 		echo "Wrong port name"
